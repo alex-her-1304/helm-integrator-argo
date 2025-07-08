@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://alex-her-1304.github.io/helm-integrator-chart
-    targetRevision: 0.8.0
+    targetRevision: 1.0.0
     chart: mychart
     helm:
     parameters:
