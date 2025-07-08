@@ -1,26 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app
+  name: app-with-external-values
   namespace: argocd
 spec:
   project: default
-  source:
-    repoURL: https://alex-her-1304.github.io/helm-integrator-chart
-    targetRevision: 1.0.0
-    chart: mychart
-    helm:
-    parameters:
-      - name: postgresql.auth.database
-        value: ps_db
-      - name: postgresql.auth.password
-        value: SecurePassword
-      - name: postgresql.auth.username
-        value: ps_user
-      - name: secretStoreCredentials.enable
-        value: true
-      - name: secretStoreCredentials.isStsEnable
-        value: false
+  sources:
+    - repoURL: https://alex-her-1304.github.io/helm-integrator-chart
+      targetRevision: 1.0.0
+      chart: mychart
+    - repoURL: https://github.com/alex-her-1304/helm-integrator-argo.git
+      targetRevision: HEAD
+      ref: values-repo
+  helm:
+    valueFiles:
+      - $values-repo/values/integrator-app-values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: prod
