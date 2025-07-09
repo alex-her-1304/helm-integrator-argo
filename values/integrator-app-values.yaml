@@ -7,7 +7,7 @@ secretStoreCredentials:
   enable: true  
   isStsEnable: false
 default:
-  image: alex130a/helm-integrator-app:1.0.0
+  image: alex130a/helm-integrator-app:0.0.4
   app_port: 8000
   replicas: 1
   debug: 0
