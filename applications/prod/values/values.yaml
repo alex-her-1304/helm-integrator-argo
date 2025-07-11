@@ -5,10 +5,10 @@ postgresql:
     username: ps_user
     postgresPassword: SecurePassword2 # Password for the admin user
 secretStoreCredentials:
-  enable: false  
+  enable: false
   isStsEnable: true
 default:
-  image: alex130a/helm-integrator-app:0.0.4
+  image: 'alex130a/helm-integrator-app:'
   app_port: 8000
   replicas: 1
   debug: 0
