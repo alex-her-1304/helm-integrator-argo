@@ -3,6 +3,7 @@ postgresql:
     database: "ps_db"
     password: SecurePassword
     username: ps_user
+    postgresPassword: SecurePassword2 # Password for the admin user
 secretStoreCredentials:
   enable: false  
   isStsEnable: true
