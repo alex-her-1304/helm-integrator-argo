@@ -11,7 +11,7 @@ spec:
       chart: mychart
       helm:
         valueFiles:
-          - $values-repo/values/integrator-app-values.yaml
+          - $values-repo/applications/prod/values/values.yaml
     - repoURL: https://github.com/alex-her-1304/helm-integrator-argo.git
       targetRevision: HEAD
       ref: values-repo
