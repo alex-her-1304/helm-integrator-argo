@@ -1,6 +1,6 @@
 postgresql:
   auth:
-    database: ps_db
+    database: "ps_db"
     password: SecurePassword
     username: ps_user
 secretStoreCredentials:
